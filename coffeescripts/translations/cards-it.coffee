@@ -39,9 +39,9 @@ exportObj.translations.Italiano =
         "Title": "Titolo"
     sources: # needed?
         "Second Edition Core Set": "Set Base Seconda Edizione"
-        "Rebel Alliance Conversion Kit": "Kit di Conversione „Rebellenallianz“"
-        "Galactic Empire Conversion Kit": "Kit di Conversione „Galaktisches Imperium“"
-        "Scum and Villainy Conversion Kit": "Kit di Conversione „Abschaum und Kriminelle“"
+        "Rebel Alliance Conversion Kit": "Kit di Conversione "Alleanza Ribelle""
+        "Galactic Empire Conversion Kit": "Kit di Conversione "Impero galattico""
+        "Scum and Villainy Conversion Kit": "Kit di Conversione "Feccia & Infamia""
         "T-65 X-Wing Expansion Pack": "T-65-X-Flügler Pack di Espansione"
         "BTL-A4 Y-Wing Expansion Pack": "BTL-A4-Y-Flügler Pack di Espansione"
         "TIE/ln Fighter Expansion Pack": "TIE/ln-Jäger Pack di Espansione"
