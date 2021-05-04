@@ -15,7 +15,7 @@ exportObj.cardLoaders.Italiano = () ->
     Stephen Kim <raithos@gmail.com>
     https://raithos.github.io
     Italian translation by
-    Filippo Bosi https://github.com/piffopi
+    Filippo Bosi and Michele Alfredo Zanco https://github.com/piffopi
 ###
 exportObj.translations.Italiano =
     slot:
@@ -42,64 +42,64 @@ exportObj.translations.Italiano =
         "Rebel Alliance Conversion Kit": "Kit di Conversione "Alleanza Ribelle""
         "Galactic Empire Conversion Kit": "Kit di Conversione "Impero galattico""
         "Scum and Villainy Conversion Kit": "Kit di Conversione "Feccia & Infamia""
-        "T-65 X-Wing Expansion Pack": "T-65-X-Flügler Pack di Espansione"
-        "BTL-A4 Y-Wing Expansion Pack": "BTL-A4-Y-Flügler Pack di Espansione"
-        "TIE/ln Fighter Expansion Pack": "TIE/ln-Jäger Pack di Espansione"
-        "TIE Advanced x1 Expansion Pack": "TIE-x1-Turbojäger Pack di Espansione"
-        "Slave 1 Expansion Pack": "Sklave 1 Pack di Espansione"
-        "Fang Fighter Expansion Pack": "Fangjäger Pack di Espansione"
-        "Lando's Millennium Falcon Expansion Pack": "Landos Millennium Falke Pack di Espansione"
-        "Saw's Renegades Expansion Pack": "Saws Rebellenmiliz Pack di Espansione"
-        "TIE Reaper Expansion Pack": "TIE-Schnitter Pack di Espansione"
+        "T-65 X-Wing Expansion Pack": "Pack di Espansione Ala-X T-65"
+        "BTL-A4 Y-Wing Expansion Pack": "Pack di Espansione BTL-A4-Y"
+        "TIE/ln Fighter Expansion Pack": "Pack di Espansione Caccia TIE/ln"
+        "TIE Advanced x1 Expansion Pack": "Pack di Espansione TIE-x1 Advanced "
+        "Slave 1 Expansion Pack": "Pack di Espansione Slave 1"
+        "Fang Fighter Expansion Pack": "Pack di Espansione Caccia Fang"
+        "Lando's Millennium Falcon Expansion Pack": "Pack di Espansione Millennium Falcon di Lando"
+        "Saw's Renegades Expansion Pack": "Pack di Espansione Rinnegati di Saw"
+        "TIE Reaper Expansion Pack": "Pack di Espansione TIE Reaper"
     ui:
         shipSelectorPlaceholder: "Scegli una nave..."
         pilotSelectorPlaceholder: "Scegli un pilota..."
         upgradePlaceholder: (translator, language, slot) ->
-            "Keine #{translator language, 'slot', slot} Aufwertungskarte"
-        modificationPlaceholder: "Keine Modifikation"
-        titlePlaceholder: "Kein Titel"
+            "Scegli Miglioria #{translator language, 'slot', slot}"
+        modificationPlaceholder: "Scegli Modifica"
+        titlePlaceholder: "Scegli Titolo"
         upgradeHeader: (translator, language, slot) ->
-            "#{translator language, 'slot', slot} Aufwertungskarte"
-        unreleased: "unveröffentlicht"
-        epic: "episch"
-        limited: "limitiert"
+            "#{translator language, 'slot', slot} Miglioria"
+        unreleased: "Non in commercio"
+        epic: "Epico"
+        limited: "Limitato"
     byCSSSelector:
         # Warnings
-        '.unreleased-content-used .translated': 'Diese Staffel verwendet nicht veröffentlicheten Inhalt!'
-        '.loading-failed-container .translated': 'Du scheinst einem defekten Link gefolgt zu sein. Es konnte kein Squad geladen werden!'
-        '.collection-invalid .translated': 'Du kannst diese Staffel nicht mit deiner Sammlung aufstellen!'
-        '.ship-number-invalid-container .translated': 'Eine turnierlegale Staffel muss aus  2-8 Schiffen bestehen!'
+        '.unreleased-content-used .translated': 'Questa squadriglia utilizza carte ancora non in commercio!'
+        '.loading-failed-container .translated': 'Sembra tu abbia cliccato su un link non funzionante. Non è stata caricata alcuna squadriglia'
+        '.collection-invalid .translated': 'Non puoi schierare questa squadriglia con la collezione in tuo possesso!'
+        '.ship-number-invalid-container .translated': 'Una squadriglia giocabile a torneo deve contenere da 2 a 8 navi!'
         # Type selector
         '.game-type-selector option[value="standard"]': 'Standard'
         '.game-type-selector option[value="hyperspace"]': 'Hyperspace'
         '.game-type-selector option[value="Epic"]': 'Epic'
         '.game-type-selector option[value="quickbuild"]': 'Quick Build'        
         # Card browser
-        '.xwing-card-browser option[value="name"]': 'Name'
-        '.xwing-card-browser option[value="source"]': 'Quelle'
-        '.xwing-card-browser option[value="type-by-points"]': 'Typ (nach Punkten)'
-        '.xwing-card-browser option[value="type-by-name"]': 'Typ (nach Namen)'
-        '.xwing-card-browser .translate.select-a-card': 'Wähle eine Karte von der Liste auf der linken Seite.'
-        '.xwing-card-browser .translate.sort-cards-by': 'Sortiere Karten nach'
+        '.xwing-card-browser option[value="name"]': 'Nome'
+        '.xwing-card-browser option[value="source"]': 'Fonte'
+        '.xwing-card-browser option[value="type-by-points"]': 'Tipo (per Costo)'
+        '.xwing-card-browser option[value="type-by-name"]': 'Tipo (per Nome)'
+        '.xwing-card-browser .translate.select-a-card': 'Scegli una carta dalla lista sulla sinistra.'
+        '.xwing-card-browser .translate.sort-cards-by': 'Ordina le carte per'
         # Info well
-        '.info-well .info-ship td.info-header': 'Schiff'
-        '.info-well .info-skill td.info-header': 'Initiative'
-        '.info-well .info-actions td.info-header': 'Aktionen'
-        '.info-well .info-upgrades td.info-header': 'Aufwertungskarten'
-        '.info-well .info-range td.info-header': 'Reichweite'
-        '.info-well .info-sources.info-header': 'Enthalten&nbsp;in:'
+        '.info-well .info-ship td.info-header': 'Nave'
+        '.info-well .info-skill td.info-header': 'Iniziativa'
+        '.info-well .info-actions td.info-header': 'Azioni'
+        '.info-well .info-upgrades td.info-header': 'Slot Miglioria'
+        '.info-well .info-range td.info-header': 'Gittata'
+        '.info-well .info-sources.info-header': 'Fonte'
         # Squadron edit buttons
-        '.clear-squad' : '<i class="fa fa-plus-circle"></i>&nbsp;Neue Staffel'
-        '.save-list' : '<i class="far fa-save"></i>&nbsp;Speichern'
-        '.save-list-as' : '<i class="far fa-file"></i>&nbsp;Speichern unter…'
-        '.delete-list' : '<i class="fa fa-trash"></i>&nbsp;Löschen'
-        '.backend-list-my-squads' : '<i class="fa fa-download"></i>&nbsp;Staffel laden'
-        '.delete-squad' : 'Löschen'
-        '.delete-squad' : 'Laden'
+        '.clear-squad' : '<i class="fa fa-plus-circle"></i>&nbsp;Nuova Squadriglia'
+        '.save-list' : '<i class="far fa-save"></i>&nbsp;Salva'
+        '.save-list-as' : '<i class="far fa-file"></i>&nbsp;Salva come...'
+        '.delete-list' : '<i class="fa fa-trash"></i>&nbsp;Cancella'
+        '.backend-list-my-squads' : '<i class="fa fa-download"></i>&nbsp;Carica Squadriglia'
+        '.delete-squad' : 'Cancella'
+        '.delete-squad' : 'Cancella'
         '.show-standard-squads' : 'Standard'
-        '.show-epic-squads' : 'Episch'
-        '.show-team-epic-squads' : 'Team Episch'
-        '.show-all-squads' : 'Alle'
+        '.show-epic-squads' : 'Epic'
+        '.show-team-epic-squads' : 'Team Epic'
+        '.show-all-squads' : 'Tutte'
         '.view-as-text' : '<span class="d-none d-lg-block"><i class="fa fa-print"></i> Drucken/Als Text ansehen</span><span class="d-lg-none"><i class="fa fa-print"></i></span>'
         '.randomize' : '<span class="d-none d-lg-block"><i class="fa fa-random"></i> Zufall!</span><span class="d-lg-none"><i class="fa fa-random"></i></span>'        
         '.randomize-options' : 'Zufallsgenerator Optionen'
@@ -134,43 +134,43 @@ exportObj.translations.Italiano =
         # Obstacles
         '.choose-obstacles' : 'Wähle Hindernisse'
         '.choose-obstacles-description' : 'Wähle bis zu drei Hindernisse, die im Link für externe Programme eingebunden werden. (Aktuell ist es nicht möglich die gewählten Hindernisse im Ausdruck anzuzeigen.)'
-        '.coreasteroid0-select' : 'Grundspiel Asteroid 0'
-        '.coreasteroid1-select' : 'Grundspiel Asteroid 1'
-        '.coreasteroid2-select' : 'Grundspiel Asteroid 2'
-        '.coreasteroid3-select' : 'Grundspiel Asteroid 3'
-        '.coreasteroid4-select' : 'Grundspiel Asteroid 4'
-        '.coreasteroid5-select' : 'Grundspiel Asteroid 5'
-        '.yt2400debris0-select' : 'YT2400 Trümmerwolke 0'
-        '.yt2400debris1-select' : 'YT2400 Trümmerwolke 1'
-        '.yt2400debris2-select' : 'YT2400 Trümmerwolke 2'
-        '.vt49decimatordebris0-select' : 'VT49 Trümmerwolke 0'
-        '.vt49decimatordebris1-select' : 'VT49 Trümmerwolke 1'
-        '.vt49decimatordebris2-select' : 'VT49 Trümmerwolke 2'
-        '.core2asteroid0-select' : 'Erwachen der Macht Asteroid 0'
-        '.core2asteroid1-select' : 'Erwachen der Macht Asteroid 1'
-        '.core2asteroid2-select' : 'Erwachen der Macht Asteroid 2'
-        '.core2asteroid3-select' : 'Erwachen der Macht Asteroid 3'
-        '.core2asteroid4-select' : 'Erwachen der Macht Asteroid 4'
-        '.core2asteroid5-select' : 'Erwachen der Macht Asteroid 5'
+        '.coreasteroid0-select' : 'Set Base Asteroide 0'
+        '.coreasteroid1-select' : 'Set Base Asteroide 1'
+        '.coreasteroid2-select' : 'Set Base Asteroide 2'
+        '.coreasteroid3-select' : 'Set Base Asteroided 3'
+        '.coreasteroid4-select' : 'Set Base Asteroide 4'
+        '.coreasteroid5-select' : 'Set Base Asteroide 5'
+        '.yt2400debris0-select' : 'YT2400 Nube di Detriti 0'
+        '.yt2400debris1-select' : 'YT2400 Nube di Detriti 1'
+        '.yt2400debris2-select' : 'YT2400 Nube di Detriti 2'
+        '.vt49decimatordebris0-select' : 'VT49 Nube di Detriti 0'
+        '.vt49decimatordebris1-select' : 'VT49 Nube di Detriti 1'
+        '.vt49decimatordebris2-select' : 'VT49 Nube di Detriti 2'
+        '.core2asteroid0-select' : 'Risveglio della Forza Asteroide 0'
+        '.core2asteroid1-select' : 'Risveglio della Forza Asteroide 1'
+        '.core2asteroid2-select' : 'Risveglio della Forza Asteroide 2'
+        '.core2asteroid3-select' : 'Risveglio della Forza Asteroide 3'
+        '.core2asteroid4-select' : 'Risveglio della Forza Asteroide 4'
+        '.core2asteroid5-select' : 'Risveglio della Forza Asteroide 5'
         # Collection
         '.collection': '<span class="d-none d-lg-block"><i class="fa fa-folder-open"></i> Deine Sammlung</span><span class="d-lg-none"><i class="fa fa-folder-open"></i></span>'
         '.checkbox-check-collection' : 'Überprüfe Staffeln auf Verfügbarkeit <input class="check-collection" type="checkbox">'
 
     singular:
-        'pilots': 'Pilot'
-        'modifications': 'Modifikation'
-        'titles': 'Titel'
-        'ships' : 'Schiff'
+        'pilots': 'Piloti'
+        'modifications': 'Modifiche'
+        'titles': 'Titoli'
+        'ships' : 'Navi'
     types:
         'Pilot': 'Pilot'
-        'Modification': 'Modifikation'
-        'Title': 'Titel'
-        'Ship': 'Schiff'
+        'Modification': 'Modifica'
+        'Title': 'Titolo'
+        'Ship': 'nave'
 
 
 exportObj.cardLoaders ?= {}
-exportObj.cardLoaders.Deutsch = () ->
-    exportObj.cardLanguage = 'Deutsch'
+exportObj.cardLoaders.Italiano = () ->
+    exportObj.cardLanguage = 'Italiano'
 
     # Rename ships
     exportObj.renameShip """YT-1300""", """Modifizierter leichter YT-1300-Frachter"""
