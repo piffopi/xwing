@@ -10,7 +10,229 @@ exportObj.cardLoaders ?= {}
 exportObj.cardLoaders.Italiano = () ->
     exportObj.cardLanguage = 'Italiano'
 
-    pilot_translations =
+   ###
+    X-Wing Squad Builder 2.0
+    Stephen Kim <raithos@gmail.com>
+    https://raithos.github.io
+    Italian translation by
+    Filippo Bosi https://github.com/piffopi
+###
+exportObj.translations.Italiano =
+    slot:
+        "Astromech": "Droide Astromeccanico"
+        "Force": "Forza"
+        "Bomb": "Bomba" # which slot is this? Bombs belong to the device slot, right?
+        "Cannon": "Cannone"
+        "Crew": "Equipaggio"
+        "Missile": "Missile"
+        "Sensor": "Sensori"
+        "Torpedo": "Siluro"
+        "Turret": "Torretta"
+        "Hardpoint": "Innesto"
+        "Illicit": "Illecito"
+        "Configuration": "Configurazione"
+        "Talent": "Talento"
+        "Modification": "Modifica"
+        "Gunner": "Artigliere"
+        "Device": "Dispositivo"
+        "Tech": "Tech"
+        "Title": "Titolo"
+    sources: # needed?
+        "Second Edition Core Set": "Set Base Seconda Edizione"
+        "Rebel Alliance Conversion Kit": "Kit di Conversione „Rebellenallianz“"
+        "Galactic Empire Conversion Kit": "Kit di Conversione „Galaktisches Imperium“"
+        "Scum and Villainy Conversion Kit": "Kit di Conversione „Abschaum und Kriminelle“"
+        "T-65 X-Wing Expansion Pack": "T-65-X-Flügler Pack di Espansione"
+        "BTL-A4 Y-Wing Expansion Pack": "BTL-A4-Y-Flügler Pack di Espansione"
+        "TIE/ln Fighter Expansion Pack": "TIE/ln-Jäger Pack di Espansione"
+        "TIE Advanced x1 Expansion Pack": "TIE-x1-Turbojäger Pack di Espansione"
+        "Slave 1 Expansion Pack": "Sklave 1 Pack di Espansione"
+        "Fang Fighter Expansion Pack": "Fangjäger Pack di Espansione"
+        "Lando's Millennium Falcon Expansion Pack": "Landos Millennium Falke Pack di Espansione"
+        "Saw's Renegades Expansion Pack": "Saws Rebellenmiliz Pack di Espansione"
+        "TIE Reaper Expansion Pack": "TIE-Schnitter Pack di Espansione"
+    ui:
+        shipSelectorPlaceholder: "Scegli una nave..."
+        pilotSelectorPlaceholder: "Scegli un pilota..."
+        upgradePlaceholder: (translator, language, slot) ->
+            "Keine #{translator language, 'slot', slot} Aufwertungskarte"
+        modificationPlaceholder: "Keine Modifikation"
+        titlePlaceholder: "Kein Titel"
+        upgradeHeader: (translator, language, slot) ->
+            "#{translator language, 'slot', slot} Aufwertungskarte"
+        unreleased: "unveröffentlicht"
+        epic: "episch"
+        limited: "limitiert"
+    byCSSSelector:
+        # Warnings
+        '.unreleased-content-used .translated': 'Diese Staffel verwendet nicht veröffentlicheten Inhalt!'
+        '.loading-failed-container .translated': 'Du scheinst einem defekten Link gefolgt zu sein. Es konnte kein Squad geladen werden!'
+        '.collection-invalid .translated': 'Du kannst diese Staffel nicht mit deiner Sammlung aufstellen!'
+        '.ship-number-invalid-container .translated': 'Eine turnierlegale Staffel muss aus  2-8 Schiffen bestehen!'
+        # Type selector
+        '.game-type-selector option[value="standard"]': 'Standard'
+        '.game-type-selector option[value="hyperspace"]': 'Hyperspace'
+        '.game-type-selector option[value="Epic"]': 'Epic'
+        '.game-type-selector option[value="quickbuild"]': 'Quick Build'        
+        # Card browser
+        '.xwing-card-browser option[value="name"]': 'Name'
+        '.xwing-card-browser option[value="source"]': 'Quelle'
+        '.xwing-card-browser option[value="type-by-points"]': 'Typ (nach Punkten)'
+        '.xwing-card-browser option[value="type-by-name"]': 'Typ (nach Namen)'
+        '.xwing-card-browser .translate.select-a-card': 'Wähle eine Karte von der Liste auf der linken Seite.'
+        '.xwing-card-browser .translate.sort-cards-by': 'Sortiere Karten nach'
+        # Info well
+        '.info-well .info-ship td.info-header': 'Schiff'
+        '.info-well .info-skill td.info-header': 'Initiative'
+        '.info-well .info-actions td.info-header': 'Aktionen'
+        '.info-well .info-upgrades td.info-header': 'Aufwertungskarten'
+        '.info-well .info-range td.info-header': 'Reichweite'
+        '.info-well .info-sources.info-header': 'Enthalten&nbsp;in:'
+        # Squadron edit buttons
+        '.clear-squad' : '<i class="fa fa-plus-circle"></i>&nbsp;Neue Staffel'
+        '.save-list' : '<i class="far fa-save"></i>&nbsp;Speichern'
+        '.save-list-as' : '<i class="far fa-file"></i>&nbsp;Speichern unter…'
+        '.delete-list' : '<i class="fa fa-trash"></i>&nbsp;Löschen'
+        '.backend-list-my-squads' : '<i class="fa fa-download"></i>&nbsp;Staffel laden'
+        '.delete-squad' : 'Löschen'
+        '.delete-squad' : 'Laden'
+        '.show-standard-squads' : 'Standard'
+        '.show-epic-squads' : 'Episch'
+        '.show-team-epic-squads' : 'Team Episch'
+        '.show-all-squads' : 'Alle'
+        '.view-as-text' : '<span class="d-none d-lg-block"><i class="fa fa-print"></i> Drucken/Als Text ansehen</span><span class="d-lg-none"><i class="fa fa-print"></i></span>'
+        '.randomize' : '<span class="d-none d-lg-block"><i class="fa fa-random"></i> Zufall!</span><span class="d-lg-none"><i class="fa fa-random"></i></span>'        
+        '.randomize-options' : 'Zufallsgenerator Optionen'
+        '.notes-container .notes-name' : 'Staffel Notizen:'
+        '.notes-container .tag-name' : 'Tag:'
+        '.choose-obstacles' : 'Hindernisse wählen'
+        '.from-xws' : 'Importieren aus XWS-Datei'
+        '.to-xws' : 'Exportieren als XWS-Datei'
+        # New Squadron dialog
+        '.discard' : 'Änderungen verwerfen'
+        # Log in dialog
+        '.login-help' : 'Was ist OAuth?'
+        '.oauth-explanation' :
+            """<p><a href="http://de.wikipedia.org/wiki/OAuth" target="_blank">OAuth</a> ist ein Authentifizierungsservice, der es dir erlaubt dich auf Webseiten anzumelden, ohne einen Nutzerkonto anlegen zu müssen. Stattdessen wählst du einen Anbieter, bei dem du bereits eine Nutzerkonto hast (z.B. Google oder Facebook), und dieser bestätigt deine Identität. Auf diese Weise kann YASB dich beim nächsten Besuch wiedererkennen. </p>
+            <p>Das beste hieran ist, dass du dir nicht ständig neue Nutzernamen und Passwörter überlegen musst. Keine Sorge, YASB sammelt keine persönlichen Daten von diesen Anbietern über dich. Teilweise kann ich nicht verhindern, dass ein Minimum an persönlichen Daten übertragen wird, diese werden ignoriert. Alles was gespeichert wird ist eine Identifikationsnummer, anhand der du beim nächsten Besuch wiedererkannt wirst - und die zu dieser ID gehörenden Staffellisten natürlich.</p>
+            <p>Um mehr zu erfahren, schau dir <a href="http://hueniverse.com/oauth/guide/intro/" target="_blank">diese Einführung in OAuth (englisch)</a> an.</p>""" # this translation will remove an "Got it!" button. It would not work, if I just add it here, as the connection to the java-script is lost. 
+        '.login-in-progress':"""<em>Die OAuth Anmeldung ist in Arbeit. Bitte beende die Anmeldung bei angegebenen Anbierter über das soeben erstellte Fenster. </em>"""
+        # Print/View modal
+        '.bbcode-list' : 'Kopiere den BBCode und füge ihn im Forum ein.<textarea></textarea><button class="btn btn-copy">Kopieren</button>'
+        '.html-list' : '<textarea></textarea><button class="btn btn-copy">Kopieren</button>'
+        '.vertical-space-checkbox' : """Lasse beim Drucken Platz für Schadens-/Aufwertungskarten <input type="checkbox" class="toggle-vertical-space" />"""
+        '.color-print-checkbox' : """Farbig drucken <input type="checkbox" class="toggle-color-print" checked="checked" />"""
+        '.print-list' : '<i class="fa fa-print"></i>&nbsp;Drucken'
+        '.select-simple-view' : 'Einfach'
+        '.select-fancy-view' : 'Schick'
+        '.close-print-dialog' : 'Schließen'
+        # Randomizer options
+        '.do-randomize' : 'Auswürfeln!'
+        # Top tab bar
+        '#browserTab' : 'Kartendatenbank'
+        '#aboutTab' : 'Impressum'
+        # Obstacles
+        '.choose-obstacles' : 'Wähle Hindernisse'
+        '.choose-obstacles-description' : 'Wähle bis zu drei Hindernisse, die im Link für externe Programme eingebunden werden. (Aktuell ist es nicht möglich die gewählten Hindernisse im Ausdruck anzuzeigen.)'
+        '.coreasteroid0-select' : 'Grundspiel Asteroid 0'
+        '.coreasteroid1-select' : 'Grundspiel Asteroid 1'
+        '.coreasteroid2-select' : 'Grundspiel Asteroid 2'
+        '.coreasteroid3-select' : 'Grundspiel Asteroid 3'
+        '.coreasteroid4-select' : 'Grundspiel Asteroid 4'
+        '.coreasteroid5-select' : 'Grundspiel Asteroid 5'
+        '.yt2400debris0-select' : 'YT2400 Trümmerwolke 0'
+        '.yt2400debris1-select' : 'YT2400 Trümmerwolke 1'
+        '.yt2400debris2-select' : 'YT2400 Trümmerwolke 2'
+        '.vt49decimatordebris0-select' : 'VT49 Trümmerwolke 0'
+        '.vt49decimatordebris1-select' : 'VT49 Trümmerwolke 1'
+        '.vt49decimatordebris2-select' : 'VT49 Trümmerwolke 2'
+        '.core2asteroid0-select' : 'Erwachen der Macht Asteroid 0'
+        '.core2asteroid1-select' : 'Erwachen der Macht Asteroid 1'
+        '.core2asteroid2-select' : 'Erwachen der Macht Asteroid 2'
+        '.core2asteroid3-select' : 'Erwachen der Macht Asteroid 3'
+        '.core2asteroid4-select' : 'Erwachen der Macht Asteroid 4'
+        '.core2asteroid5-select' : 'Erwachen der Macht Asteroid 5'
+        # Collection
+        '.collection': '<span class="d-none d-lg-block"><i class="fa fa-folder-open"></i> Deine Sammlung</span><span class="d-lg-none"><i class="fa fa-folder-open"></i></span>'
+        '.checkbox-check-collection' : 'Überprüfe Staffeln auf Verfügbarkeit <input class="check-collection" type="checkbox">'
+
+    singular:
+        'pilots': 'Pilot'
+        'modifications': 'Modifikation'
+        'titles': 'Titel'
+        'ships' : 'Schiff'
+    types:
+        'Pilot': 'Pilot'
+        'Modification': 'Modifikation'
+        'Title': 'Titel'
+        'Ship': 'Schiff'
+
+
+exportObj.cardLoaders ?= {}
+exportObj.cardLoaders.Deutsch = () ->
+    exportObj.cardLanguage = 'Deutsch'
+
+    # Rename ships
+    exportObj.renameShip """YT-1300""", """Modifizierter leichter YT-1300-Frachter"""
+    exportObj.renameShip """StarViper""", """Angriffsplattform der Sternenviper-Klasse"""
+    exportObj.renameShip """Scurrg H-6 Bomber""", """Scurrg-H-6-Bomber"""
+    exportObj.renameShip """YT-2400""", """Leichter YT-2400-Frachter"""
+    exportObj.renameShip """Auzituck Gunship""", """Auzituck-Kanonenboot"""
+    exportObj.renameShip """Kihraxz Fighter""", """Kihraxz-Jäger"""
+    exportObj.renameShip """Sheathipede-Class Shuttle""", """Raumfähre der Sheathipede-Klasse"""
+    exportObj.renameShip """Quadjumper""", """Quadrijet-Transferschlepper"""
+    exportObj.renameShip """Firespray-31""", """Patrouillenboot der Firespray-Klasse"""
+    exportObj.renameShip """TIE Fighter""", """TIE/ln-Jäger"""
+    exportObj.renameShip """Y-Wing""", """BTL-A4-Y-Flügler"""
+    exportObj.renameShip """TIE Advanced""", """TIE-x1-Turbojäger"""
+    exportObj.renameShip """Alpha-Class Star Wing""", """Sternflügler der Alpha-Klasse"""
+    exportObj.renameShip """U-Wing""", """UT-60D-U-Flügler"""
+    exportObj.renameShip """TIE Striker""", """TIE/sk-Stürmer"""
+    exportObj.renameShip """B-Wing""", """A/SF-01-B-Flügler"""
+    exportObj.renameShip """TIE Defender""", """TIE/D-Abwehrjäger"""
+    exportObj.renameShip """TIE Bomber""", """TIE/sa-Bomber"""
+    exportObj.renameShip """TIE Punisher""", """TIE/ca-Vergelter"""
+    exportObj.renameShip """Aggressor""", """Aggressor-Angriffsjäger"""
+    exportObj.renameShip """G-1A Starfighter""", """G-1A Sternenjäger"""
+    exportObj.renameShip """VCX-100""", """Leichter VCX-100-Frachter"""
+    exportObj.renameShip """YV-666""", """Leichter YV-666-Frachter"""
+    exportObj.renameShip """TIE Advanced Prototype""", """TIE-v1-Turbojäger"""
+    exportObj.renameShip """Lambda-Class Shuttle""", """T-4A-Raumfähre der Lambda-Klasse"""
+    exportObj.renameShip """TIE Phantom""", """TIE/ph-Phantom"""
+    exportObj.renameShip """VT-49 Decimator""", """VT-49-Decimator"""
+    exportObj.renameShip """TIE Aggressor""", """TIE/ag-Agressor"""
+    exportObj.renameShip """K-Wing""", """BTL-S8-K-Flügler"""
+    exportObj.renameShip """ARC-170""", """ARC-170-Sternenjäger"""
+    exportObj.renameShip """Attack Shuttle""", """Jagdshuttle"""
+    exportObj.renameShip """X-Wing""", """T-65-X-Flügler"""
+    exportObj.renameShip """HWK-290""", """Leichter HWK-290-Frachter"""
+    exportObj.renameShip """A-Wing""", """RZ-1-A-Flügler"""
+    exportObj.renameShip """Fang Fighter""", """Fangjäger"""
+    exportObj.renameShip """Z-95 Headhunter""", """Z-95-AF4-Kopfjäger"""
+    exportObj.renameShip """M12-L Kimogila Fighter""", """M12-L-Kimogila-Jäger"""
+    exportObj.renameShip """E-Wing""", """E-Flügler"""
+    exportObj.renameShip """TIE Interceptor""", """TIE-Abfangjäger"""
+    exportObj.renameShip """Lancer-Class Pursuit Craft""", """Jagdschiff der Lanzen-Klasse"""
+    exportObj.renameShip """TIE Reaper""", """TIE-Schnitter"""
+    exportObj.renameShip """M3-A Interceptor""", """M3-A-Abfangjäger"""
+    exportObj.renameShip """JumpMaster 5000""", """JumpMaster 5000"""
+    exportObj.renameShip """Customized YT-1300""", """Modifizierter YT-1300-Frachter"""
+    exportObj.renameShip """Escape Craft""", """Fluchtschiff"""
+    exportObj.renameShip """TIE/FO Fighter""", """TIE/eo-Jäger"""
+    exportObj.renameShip """TIE/SF Fighter""", """TIE/sf Jäger"""
+    exportObj.renameShip """Upsilon-Class Command Shuttle""", """Kommandoshuttle der Ypsilon-Klasse"""
+    exportObj.renameShip """TIE/VN Silencer""", """TIE/vn-Dämpfer"""
+    exportObj.renameShip """T-70 X-Wing""", """T-70-X-Flügler"""
+    exportObj.renameShip """RZ-2 A-Wing""", """RZ-2-A-Flügler"""
+    exportObj.renameShip """MG-100 StarFortress""", """MG-100-SternenFestung"""
+    exportObj.renameShip """Mining Guild TIE Fighter""", """Modifizierter TIE/ln-Jäger"""
+    exportObj.renameShip """Scavenged YT-1300""", """YT-1300 vom Schrottplatz"""
+    exportObj.renameShip """V-19 Torrent""", """V-19-Torrent-Sternenjäger"""    
+    exportObj.renameShip """Belbullab-22 Starfighter""", """Bellbullab-22 Sternenjäger"""
+    exportObj.renameShip """Vulture-class Droid Fighter""", """Droidenjäger der Vulture-Klasse"""
+    exportObj.renameShip """Sith Infiltrator""", """Sith-Infiltrator"""
+
+     pilot_translations =
         "4-LOM":
            display_name: """4-LOM"""
            text: """Dopo che hai eseguito completamente una manovra rossa, ottieni 1 segnalino calcolo.%LINEBREAK%All’inizio della Fase Finale, puoi scegliere 1 nave a gittata 0-1. Se lo fai, trasferisci 1 tuo segnalino tensione a quella nave."""
@@ -1477,6 +1699,43 @@ exportObj.cardLoaders.Italiano = () ->
            display_name: """“Zeb” Orrelios"""
            text: """<i>CHANGE MECHANGE ME</i>%LINEBREAK%Puoi effettuare attacchi primari a gittata 0. Le navi nemiche a gittata 0 possono effettuare attacchi primari contro di te."""
  
-    condition_translations = {}
+    condition_translations =
+        'Suppressive Fire':
+           display_name: 'Sperrfeuer'
+           text: '''Solange du einen Angriff gegen ein anderes Schiff als <strong>Captain Rex</strong> durchführst, wirf 1 Angriffswürfel weniger. %LINEBREAK%Nachdem <strong>Captain Rex</strong> verteidigt hat, entferne diese Karte. <strong>Captain Rex</strong>Am Ende der Kampfphase, falls <strong>Captain Rex</strong> in dieser Phase keinen Angriff durchgeführt hat, entferne diese Karte. %LINEBREAK%Nachdem <strong>Captain Rex</strong> zerstört worden ist, entferne diese Karte.'''
+        'Hunted':
+           display_name: 'Gejagt'
+           text: '''Nachdem du zerstört worden bist, musst du ein anderes befreundetes Schiff wählen und ihm diesen Zustand zuordnen, falls möglich.'''
+        'Listening Device':
+           display_name: 'Abhörgerät'
+           text: '''Während der Systemphase, falls ein feindliches Schiff mit der Aufwertung <strong>Informant</strong> in Reichweite 0-2 ist, drehe dein Rad auf die offene Seite.'''
+        'Optimized Prototype':
+           display_name: 'Optimierter Prototyp'
+           text: '''Solange du einen %FRONTARC%-Primärangriff gegen ein Schiff durchführst, das von einem befreundeten Schiff mit der Aufwertung <strong>Direktor Krennic</strong> als Ziel erfasst ist, darfst du 1 %HIT%/%CRIT%/%FOCUS%-Ergebnis ausgeben. Falls du das tust, wähle 1 der folgenden Optionen: Der Verteidiger verliert 1 Schild oder der Verteidiger dreht 1 seiner verdeckten Schadenskarten um.'''
+        'Proton Bomb':
+           display_name: """Protonenbombe"""
+           text: '''(Bomben Token) - Am Ende der Aktivierungsphase detoniert dieses Gerät. Sobald dieses Gerät detoniert, erleidet jedes Schiff in Reichweite 0–1 1 %CRIT%-Schaden.'''
+        'Seismic Charge':
+           display_name: """Seismische Bombe"""
+           text: '''(Bomben Token) - Am Ende der Aktivierungsphase detoniert dieses Gerät. Sobald dieses Gerät detoniert, wähle 1 Hindernis in Reichweite 0–1. Jedes Schiff in Reichweite 0–1 zu jenem Hindernis erleidet 1 %HIT%-Schaden. Dann entferne jenes Hindernis.'''
+        'Bomblet':
+           display_name: """Streubombe"""
+           text: '''(Bomben Token) - Am Ende der Aktivierungsphase detoniert dieses Gerät. Sobald dieses Gerät detoniert, wirft jedes Schiff in Reichweite 0–1 2 Angriffswürfel. Jedes Schiff erleidet 1 %HIT%-Schaden für jedes %HIT%/%CRIT% Ergebnis.'''
+        'Loose Cargo':
+           display_name: """Freie Fracht"""
+           text: '''(Debris Token) - Freie Fracht ist eine Trümmerwolke..'''
+        'Conner Net':
+           display_name: """Connernetz"""
+           text: '''(Mine Token) - Nachdem ein Schiff sich durch dieses Gerät hindurchbewegt oder sich mit ihm überschnitten hat, detoniert es. Sobald dieses Gerät detoniert, erleidet das Schiff 1 %HIT%-Schaden und erhält 3 Ionenmarker.'''
+        'Proximity Mine':
+           display_name: """Annäherungsmine"""
+           text: '''(Mine Token) - Nachdem sich ein Schiff durch dieses Gerät hindurchbewegt oder mit ihm überschnitten hat, detoniert es. Sobald dieses Gerät detoniert, wirft jenes Schiff 2 Angriffswürfel. Jenes Schiff erleidet dann 1 %HIT%-Schaden sowie 1 %HIT%/%CRIT%-Schaden für jedes passende Ergebnis.'''
+        'Rattled':
+           display_name: 'Aus der Fassung'
+           text: 'Nachdem eine Bombe oder Mine in Reichweite 0-1 detoniert ist, erleide 1 %CRIT% Schaden. Dann entferne diese Karte. %LINEBREAK% <strong>Aktion:</strong> Falls keine Bomben oder Minen in Reichweite 0-1 sind, entferne diese Karte.'
+        '''I'll Show You the Dark Side''': 
+           display_name: 'Ich zeige dir die dunkle Seite'
+           text: 'Sobald diese Karte zugeordnet wird, falls keine offene Schadenskarte darauf liegt, sucht der Spieler, der sie zugeordnet hat, im Schadensstapel nach 1 <strong>Pilot</strong>-Schadenskarte und platziert sie offen auf dieser Karte. Dann mische den Schadensstapel. %LINEBREAK%Sobald du 1 %CRIT%-Schaden erleiden würdest, wird dir stattdessen die offene Schadenskarte auf dieser Karte zugeteilt. Dann entferne diese Karte. '
 
     exportObj.setupTranslationCardData pilot_translations, upgrade_translations, condition_translations
+
